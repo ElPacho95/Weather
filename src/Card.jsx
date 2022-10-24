@@ -1,6 +1,6 @@
-const Cards = ({ data }) => {
+const Card = ({ data }) => {
   return (
-    <div className="card">
+    <div className={!data.current.is_day ? `night-bg` : "card"}>
       <div className="about">
         <div className="name">{data.location.name}</div>
 
@@ -20,4 +20,4 @@ const Cards = ({ data }) => {
   );
 };
 
-export default Cards;
+export default Card;

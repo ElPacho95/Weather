@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Cards from "./Cards";
+import Card from "./Card";
 
 function App() {
   const [cities, setCities] = useState([]);
@@ -49,7 +49,7 @@ function App() {
           <span>
             <button onClick={handleSubmit} className="btn">
               <svg
-                fill="#000000"
+                fill="#fff"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 30 30"
                 width="30px"
@@ -63,7 +63,7 @@ function App() {
         <div className="error">{error}</div>
         <div>
           {cities.map((data) => (
-            <Cards data={data} />
+            <Card data={data} />
           ))}
         </div>
       </div>
