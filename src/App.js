@@ -4,12 +4,14 @@ import Card from "./Card";
 function App() {
   const [city, setCity] = useState([]);
   const [search, setSearch] = useState("Grozny");
-
   const fetchAPI = async () => {
     const response = await fetch(
       `https://api.weatherapi.com/v1/forecast.json?key=959fbc882edd4522b59134540213007&q=${search}`
     );
     const resJSON = await response.json();
+    if (response.ok === false) {
+      return;
+    }
     setCity([...city, resJSON]);
     setSearch("");
   };
@@ -25,7 +27,7 @@ function App() {
   const handleChange = (e) => {
     setSearch(e.currentTarget.value);
   };
-  console.log(city);
+
   return (
     <div className="App">
       <div className="main">
