@@ -52,14 +52,14 @@ form {
   width: 335px;
   height: 117px;
   border-radius: 10px;
-  background: url("assets/day-bg.jpg");
+  background: url("assets/day-bg.gif");
   background-repeat: no-repeat;
   background-size: cover;
   margin-top: 30px;
   padding: 20px;
 }
 .night-bg {
-  background: url("assets/night-bg.jpeg");
+  background: url("assets/night-bg.gif");
   background-repeat: no-repeat;
   background-size: cover;
   width: 335px;
