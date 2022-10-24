@@ -1,19 +1,24 @@
 import { useEffect, useState } from "react";
-import Card from "./Card";
+import Cards from "./Cards";
 
 function App() {
-  const [city, setCity] = useState([]);
+  const [cities, setCities] = useState([]);
   const [search, setSearch] = useState("Grozny");
+  const [error, setError] = useState("");
   const fetchAPI = async () => {
+    if (!search) {
+      return;
+    }
     const response = await fetch(
       `https://api.weatherapi.com/v1/forecast.json?key=959fbc882edd4522b59134540213007&q=${search}`
     );
     const resJSON = await response.json();
-    if (response.ok === false) {
-      return;
+    if (response.ok) {
+      setCities([...cities, resJSON]);
+      setSearch("");
+    } else {
+      setError(resJSON.error.message);
     }
-    setCity([...city, resJSON]);
-    setSearch("");
   };
   useEffect(() => {
     fetchAPI();
@@ -26,6 +31,7 @@ function App() {
 
   const handleChange = (e) => {
     setSearch(e.currentTarget.value);
+    setError("");
   };
 
   return (
@@ -43,7 +49,7 @@ function App() {
           <span>
             <button onClick={handleSubmit} className="btn">
               <svg
-                fill="#fff"
+                fill="#000000"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 30 30"
                 width="30px"
@@ -54,8 +60,11 @@ function App() {
             </button>
           </span>
         </form>
-        <div className="card">
-          <Card city={city} />
+        <div className="error">{error}</div>
+        <div>
+          {cities.map((data) => (
+            <Cards data={data} />
+          ))}
         </div>
       </div>
     </div>

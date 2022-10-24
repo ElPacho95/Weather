@@ -8,6 +8,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: black;
+  background: url("assets/weather-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
 code {
@@ -15,7 +19,7 @@ code {
     monospace;
 }
 .main {
-  width: 310px;
+  width: 375px;
   margin: auto;
   text-align: center;
 }
@@ -24,14 +28,14 @@ code {
 }
 
 .btn {
-  background-color: black;
+  background: transparent;
   border: none;
   cursor: pointer;
 }
 form {
   display: flex;
   justify-content: space-around;
-  width: 339px;
+  width: 379px;
 }
 .input {
   width: 340px;
@@ -46,10 +50,11 @@ form {
   width: 335px;
   height: 117px;
   border-radius: 10px;
-  background: url("./mike-erskine-BWqinEVjUKo-unsplash1.jpg");
+  background: url("assets/weather-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   margin-top: 30px;
+  padding: 20px;
 }
 .about {
   display: flex;
@@ -81,4 +86,8 @@ form {
   color: white;
   margin-top: 20px;
   padding: 5px;
+}
+.error {
+  color: red;
+  margin-top: 8px;
 }
