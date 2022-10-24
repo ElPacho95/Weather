@@ -7,8 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: black;
-  background: url("assets/weather-bg.jpg");
+  background-image: url("assets/weather-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -53,7 +52,7 @@ form {
   width: 335px;
   height: 117px;
   border-radius: 10px;
-  background: url("assets/weather-bg.jpg");
+  background: url("assets/day-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   margin-top: 30px;
